@@ -1,0 +1,14 @@
+.details{
+    padding: 20px;
+    flex: 0 0 25%; 
+}
+
+.details hr{
+    color: gray;
+}
+
+@media (max-width: 985px){
+    .details{
+        display: none !important;        
+    }
+}

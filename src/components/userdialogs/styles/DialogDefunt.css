@@ -1,0 +1,27 @@
+a{
+    text-decoration: none;
+    color: black;
+}
+
+.dialog-element{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    padding: 20px;
+    border-radius: 20px;
+    border-bottom: 1px solid #a9a9a9;
+}
+
+.dialog-element:hover{
+    background-color: #f1f1f1;
+}
+
+.dialog-element > div{
+    margin-left: 10px;
+    font-weight: 600;
+}
+
+.no-defunt{
+    text-align: center;
+}
+

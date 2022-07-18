@@ -1,0 +1,25 @@
+.defunt{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 50px;    
+}
+
+.defuntCenter{
+    flex: 1 1 auto;
+}
+
+.defuntLeft, 
+.defuntRight{
+    flex: 0 0 50px;
+    position: fixed;
+}
+
+@media (max-width: 1300px){
+    .defuntLeft,
+    .defuntRight{
+        display: none !important;
+    }
+    .defuntCenter{
+        width: 100%;
+    }
+}

@@ -1,0 +1,52 @@
+.defunt_suggestion{
+    display: flex;    
+    padding: 15px; 
+    cursor: pointer;   
+}
+
+.defunt_suggestion:hover{
+    background-color:lightgray;
+    border-radius: 10px;
+}
+
+
+.defsug_body{
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+
+.defsug_body > .defsug_info{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.defsug_btns{
+    display: flex;
+    margin-top: 10px;
+}
+
+.defsug_btns > button{
+    padding: 8px 25px;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.defsug_btns > .btn_svr{
+    background-color: #CB1A29;
+    color: white;
+}
+
+.defsug_btns > .btn_spm{
+    background-color: #E4E6EB;
+    color: black;
+    margin-left: 10px;
+}
+
+.defsug_btns > .btn_spm:hover{
+    background-color: #D8DADF;
+}

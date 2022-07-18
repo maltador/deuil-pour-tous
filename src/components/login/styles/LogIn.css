@@ -1,0 +1,45 @@
+
+.login_form h3{
+    color: #111;
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.login_form > .input_login{
+    position: relative;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.login_form > .input_login > input
+{
+    width: 100%;
+    border: 1px solid #555;
+    padding: 10px;
+    color: #111;
+    outline: none;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.login_form > .input_login > input[type="submit"]
+{
+    width: 300px;
+    background-color: #323232;
+    color: #eff2f5;
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.login_form > .input_login > input[type="submit"]:hover
+{
+    background-color: white;
+    color: #323232;    
+}
+
+.login_form > label{
+    text-align: center;
+    color: #CB1A29;;
+} 

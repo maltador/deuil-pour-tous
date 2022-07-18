@@ -1,0 +1,42 @@
+.story{
+    position: relative;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* width: 120px;
+    height: 200px; */
+    width: 320px;
+    height: 350px;
+    box-shadow: 0px 8px 27px -7px rgba(0, 0, 0, 0.75);
+    border-radius: 10px;
+    margin-top: 20px;
+    margin-right: 20px;
+    transition: transform 100ms ease-in;
+    cursor: pointer;
+}
+
+.story:hover{
+    transform: scale(1.07);
+}
+
+.defunt_avatar{
+    margin: 10px;
+    border: 5px solid #CB1A29;
+}
+
+.story > h4{
+    position: absolute;
+    bottom: 20px;
+    left:20px;
+    color: #FFF;
+}
+
+.story h5{
+    color: #FFF;
+    margin-left: 10px;
+}
+
+.story h5:hover{
+    color: #CB1A29;
+    text-decoration: underline;
+}

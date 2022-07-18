@@ -1,0 +1,28 @@
+/* .couverture {
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+} */
+
+.couverture #title:hover{
+    color: #CB1A29;
+}
+
+.cim-content{
+    padding: 50px 200px;
+    background-color: #efefef;
+}
+
+.cim-content .cards{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+@media(max-width: 760px){
+    .cim-content{
+        padding: 50px 50px;
+    }
+}

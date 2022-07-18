@@ -1,0 +1,10 @@
+.hommage{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+} 
+
+/* .hommage > .msg-nopost{
+    text-align: center;
+    width: 70%;
+} */

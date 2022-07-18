@@ -1,0 +1,9 @@
+@media (max-width: 860px) {
+    .card-oraison {
+        width: 100%;
+    }
+
+    .card-oraison > .card-oraison-image{
+        width: 34%;
+    } 
+}

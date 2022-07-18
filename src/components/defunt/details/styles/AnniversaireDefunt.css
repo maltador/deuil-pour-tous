@@ -1,0 +1,37 @@
+.anniversaire_defunt{
+    display: flex;
+    flex-direction: column; 
+    padding: 10px;
+}
+
+.anniversaire_defunt > .anniversaire_titre > h3{
+    color: gray;
+    letter-spacing: 2px;
+}
+
+.anniversaire_defunt > .anniversaire_body{
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.anniversaire_defunt > .anniversaire_body:hover{
+    border-radius: 10px;
+    cursor: pointer;
+    background-color:lightgray;
+}
+
+.anniversaire_defunt > .anniversaire_body > .anniversaire_icon{
+    margin: 10px;
+    font-size: xx-large;
+    color: #CB1A29;
+}
+
+.anniversaire_defunt > .anniversaire_body > .anniversaire_info{
+    margin: 10px;
+}
+
+/* .anniversaire_defunt > .anniversaire_body > .anniversaire_info
+> span{
+    font-weight: 600;
+} */

@@ -1,0 +1,156 @@
+.messageSender {
+    display: flex;
+    margin-top: 30px;
+    flex-direction: column;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0px 5px 7px -7px rgba(0, 0, 0, 0.75);
+    width: 519px;
+}
+
+@media (max-width: 860px) {
+    .messageSender {
+        width: 100%;
+    }
+}
+
+@media(max-width: 717px) {
+    .messageSender-top {
+        display: flex;
+        /* justify-content: center; */
+        flex-wrap: wrap;
+        margin-top: 20px;
+    }
+
+    .messageSender-bottom{
+        display: flex;
+        /* justify-content: center; */
+        flex-wrap: wrap;
+        margin-top: 20px;
+    }
+
+    .messageSender-top form{
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 40px;
+    }
+
+    .messageSender-input{
+        height: 50px;
+    }
+
+    .messageSender-input-img{
+        display: none;
+    }
+}
+
+.messageSender-top {
+    display: flex;
+    border-bottom: 1px solid #eff2f5;
+    padding: 15px;
+    flex: 1;
+    justify-content: flex-start;
+}
+
+.messageSender-top>form {
+    flex: 1;  
+    display: flex;
+    flex-direction: column;
+    margin: 0 10px;
+}
+
+.messageSender-top>form > textarea{
+    background-color: #eff2f5;
+    padding: 5px 20px;
+    /* margin: 0 10px;  */
+    /* margin-left: 10px; */
+    border: none;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    height: 100px;
+    /* width: 100%; */
+    overflow: hidden;
+    resize: none;
+    flex: 1;
+}
+
+.messageSender-top>form > .textarea-skeleton{
+    margin: 0 10px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    flex: 1;
+}
+
+.messageSender-top>form > textarea:focus{
+    border: none;
+    /* background-color: aqua; */
+}
+
+.messageSender-top>form > div{
+    margin-left: 10px;
+}
+
+/* .messageSender-top>form>input {
+    outline-width: 0;
+    border: none;
+    padding: 5px 20px;
+    margin: 0 10px;
+    border-radius: 999px;
+    background-color: #eff2f5;
+} */
+
+.messageSender-top>form>button {
+    padding: 8px 25px;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    background-color: #CB1A29;
+    color: white;
+    margin-left: 10px;
+    margin-top: 20px;
+    width: 8em;
+}
+
+.messageSender-top>form>.button-send-skeleton{
+    margin-left: 10px;
+    margin-top: 20px;
+    border-radius: 10px;
+    width: 8em;
+}
+
+/* .messageSender-input {
+    flex: 1;
+} */
+input[type="file"]{
+    display: none;
+}
+
+.messageSender-bottom {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.messageSender-option {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    color: gray;
+    margin: 5px;
+}
+
+.messageSender-option>h3 {
+    font-size: medium;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.messageSender-option:hover {
+    background-color: #eff2f5;
+    border-radius: 20px;
+}
+
+.messageSender-bottom> .bottom_btn {
+    border-radius: 20px;
+}

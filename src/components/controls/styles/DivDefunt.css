@@ -1,0 +1,32 @@
+.div_defunt {
+  display: flex;
+  align-items: center;
+}
+
+.div_defunt > .div_defunt_icon {
+  margin-left: 10px;
+}
+
+.div_defunt > .div_defunt_info > .div_defunt_input {
+  background-color: #eff2f5;
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border: none;
+  padding: 8px 15px;
+}
+
+.div_defunt > .div_defunt_info > input[type="text"] {
+  text-transform: uppercase;
+}
+
+.div_defunt > .div_defunt_info > .div_defunt_btn {
+  padding: 8px 15px;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  background-color: #cb1a29;
+  color: white;
+  margin-left: 10px;
+}

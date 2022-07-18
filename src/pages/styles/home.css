@@ -1,0 +1,172 @@
+.banniere{
+    position: relative;
+    /* background-position: center center; */
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*background-image: url(/public/img/cimetiere01.jpg);*/
+    /* background-image: url('/src/images/default-cover.jpg'); */
+    /* background-image: url('/public/img/cimetiere05.jpg'); */
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.banniere .contenuHome{
+    max-width: 70%;
+    text-align: center;
+}
+
+.banniere .contenuHome h2{
+    color: #323232;
+    font-size: 3em;
+    text-transform: capitalize;
+}
+
+
+.contenuHome > p{
+    color: #FFF; 
+    font-size: 1.2em;
+    padding-top: 20px;
+}
+
+.btn1{
+    font-size: 1em;
+    color: #fff;
+    background-color: #323232;
+    padding: 10px 20px;
+    display: inline-block;
+    margin-top: 20px;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 2px;
+    transition: 0.5s;
+    margin-left: 10px;
+}
+
+.btn2{
+    font-size: 1em;
+    color: #fff;
+    background-color: #CB1A29;
+    border: none;
+    padding: 10px 20px;
+    display: inline-block;
+    margin-top: 20px;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 2px;
+    transition: 0.5s;
+    margin-left: 10px;
+}
+
+.btn1:hover{
+    letter-spacing: 4px;
+}
+
+.btn2:hover{
+    letter-spacing: 4px;
+}
+
+.section{
+    padding: 100px;
+}
+
+@media(max-width: 717px){
+    section{
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+}
+
+.titre-texte{
+    color: #000;
+    font-size: 2em;
+    font-weight: 300px;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    margin-top: -50px;    
+}
+
+.titre{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/*.trending{
+    margin-top: -100px; 
+}*/
+
+.trending .contenuHome{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.contact{
+    /* box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.8);
+    width: 60%; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: -50px;
+} 
+
+.contactform{
+    padding: 75px 50px;
+    background: #FFF;
+    box-shadow: 5px 15px 50px rgba(0, 0, 0, 0.8);
+    /* max-width: 500px; */
+    width: 500px;
+    margin-top: 50px;
+    justify-content: center;
+    align-items: center;
+    /* margin-left: 38%; */
+}
+
+.contactform h3{
+    color: #111;
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.contactform .inputboite{
+    position: relative;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.contactform .inputboite input,
+.contactform .inputboite textarea{
+    width: 100%;
+    border: 1px solid #555;
+    padding: 10px;
+    color: #111;
+    outline: none;
+    font-size: 16px;
+    font-weight: 300;
+    resize: none;
+}
+
+.contactform .inputboite input[type="submit"]{
+    font-size: 1em;
+    font-weight: 700;
+    color: #fff;
+    background-color: #CB1A29;
+    display: inline-block;
+    cursor: pointer;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 2px;
+    outline: none;
+    border: none;
+    transition: 0.5s;
+    max-width: 120px;
+    align-items: center;
+    justify-content: center;
+}

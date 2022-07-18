@@ -1,0 +1,36 @@
+.suggestion{
+    display: flex;
+    flex-direction: column; 
+    padding: 10px;   
+}
+
+.suggestion > .suggestion_titre{
+    display: flex;
+    justify-content: space-between;
+    justify-items: center;
+}
+
+.suggestion > .suggestion_titre > button{
+    border: none;
+    color: #CB1A29;
+    font-size: medium;
+    cursor: pointer;
+    padding: 5px 8px;
+}
+
+.suggestion > .suggestion_titre > button:hover{
+    border-radius: 5px;
+    background-color: lightgray;
+    
+}
+
+.suggestion > .suggestion_titre > h3{
+    color: gray;
+    letter-spacing: 2px;
+}
+
+.suggestion > .suggestion_body{
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+}
