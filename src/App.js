@@ -10,22 +10,37 @@ import Routers from './router';
 import * as client from './utils/ClientApi';
 import Snackbar from '@mui/material/Snackbar';
 import Alert from '@mui/material/Alert';
+import BackdropLoading from './components/userdialogs/BackdropLoading';
+/* Add float button */
+
 
 function App() {
   const dispatch= useDispatch();   
   const userData= useSelector((state)=> state.userReducer)
   const [openSnack, setOpenSnack]= useState(false);
+  const [openBackdrop, setOpenBackdrop] = useState(false);
+
   const handleClose=()=>{
     setOpenSnack(false)
   }
 
-  useEffect(()=>{    
-    if(userData.token) dispatch(getUser());
+  
+
+  useEffect(()=>{ 
+    const fetchToken= async ()=>{
+      // setOpenBackdrop(true);
+      await dispatch(getUser())
+        // .then(()=>{
+        /* setOpenBackdrop(false); */
+        // })
+    }   
+    if(userData.token) fetchToken();
     else console.log('Erreur pas de Token!!')
   }, [userData.token])
 
   return (
     <div className="app">
+      <BackdropLoading open={openBackdrop} />
       <Routers/>
       <Snackbar open={openSnack} autoHideDuration={6000} onClose={handleClose}>
         <Alert onClose={handleClose} severity="error" sx={{ width: '100%' }}>

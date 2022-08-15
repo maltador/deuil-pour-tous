@@ -1,8 +1,12 @@
 import React from "react";
 import "./styles/NoPost.css";
 
-function NoPost() {
-  return <div className="no-post">Aucun post trouvé</div>;
+function NoPost({ type }) {
+  return (
+    <div className="no-post">
+      {type === "hommage" ? `Aucun ${type} trouvé` : `Aucune ${type} trouvée`}
+    </div>
+  );
 }
 
 export default NoPost;

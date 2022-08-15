@@ -6,9 +6,11 @@ import PeopleIcon from "@mui/icons-material/People";
 import PaymentIcon from "@mui/icons-material/Payment";
 import PhoneIcon from "@mui/icons-material/Phone";
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 function Sidebar() {
   const defuntData = useSelector((state) => state.currentuserReducer);
+  const userData = useSelector((state) => state.userReducer);
 
   // useEffect(() => {
   //   const fetchUser = async () => {
@@ -35,10 +37,11 @@ function Sidebar() {
       )}
       {defuntData.user && (
         <>
+          <Link to={userData.uid === defuntData.user.uid ? '/profil' : `/profil/${defuntData.user.uid}`}>
           <SidebarRow
             title={`${defuntData.user.pseudo} (Auteur)`}
             src={defuntData.user.imageUrl}
-          />
+          /></Link>
           <SidebarRow title={`Abonnées (${defuntData.followers.length})`} Icon={PeopleIcon} />
           <SidebarRow title={"Faire un don"} Icon={PaymentIcon} />
           <SidebarRow title={"Contact"} Icon={PhoneIcon} />

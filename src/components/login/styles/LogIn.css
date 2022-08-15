@@ -12,7 +12,8 @@
     margin-bottom: 20px;
 }
 
-.login_form > .input_login > input
+.login_form > .input_login > input,
+.login_form > .input_login > button
 {
     width: 100%;
     border: 1px solid #555;
@@ -23,7 +24,7 @@
     font-weight: 300;
 }
 
-.login_form > .input_login > input[type="submit"]
+.login_form > .input_login > button
 {
     width: 300px;
     background-color: #323232;
@@ -33,7 +34,7 @@
     transition: 0.3s ease-in-out;
 }
 
-.login_form > .input_login > input[type="submit"]:hover
+.login_form > .input_login > button:hover
 {
     background-color: white;
     color: #323232;    

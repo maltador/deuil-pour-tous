@@ -18,11 +18,11 @@ function Hommages() {
               <Message key={post.post_id} post={post} />
             ))}
           {defuntData.hommages.length === 0 && (
-            <NoPost/>
+            <NoPost type={"hommage"}/>
           )}
         </>
       ) : (
-        <NoPost/>
+        <NoPost type={"hommage"}/>
         // <div className="msg-nopost"> Aucun hommage rendu à ce défunt</div>
       )}
 

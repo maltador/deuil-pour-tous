@@ -18,11 +18,11 @@ function Oraisons() {
               <Message key={post.post_id} post={post} />
             ))}
           {defuntData.oraisons.length === 0 && (
-            <NoPost/>
+            <NoPost type={"oraison funèbre"}/>
           )}
         </>
       ) : (
-        <NoPost/>
+        <NoPost type={"oraison funèbre"}/>
       )}
     </div>
   )

@@ -18,11 +18,11 @@ function Condoleances() {
               <Message key={post.post_id} post={post} />
             ))}
           {defuntData.condoleances.length === 0 && (
-            <NoPost/>
+            <NoPost type={"condoléance"} />
           )}
         </>
       ) : (
-        <NoPost/>
+        <NoPost type={"condoléance"} />
       )}
     </div>
   );

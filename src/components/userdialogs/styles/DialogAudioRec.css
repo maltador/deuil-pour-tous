@@ -1,0 +1,31 @@
+.audio-recorder{
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    justify-items: center;
+}
+
+.audio-recorder > .audio-buttons{
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    margin: 10px 20px;
+}
+
+.audio-recorder > .audio-buttons > button{
+    margin: 5px;
+    cursor: pointer;
+    padding: 8px 25px;
+    border-radius: 10px;
+    border: none;
+    text-align: center;
+    color: white;
+}
+
+.audio-recorder > .audio-buttons > button.btn-play{
+    background-color: #CB1A29;    
+}
+
+.audio-recorder > .audio-buttons > button.btn-stop{
+    background-color: #323232;    
+}

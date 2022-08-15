@@ -15,6 +15,19 @@
 .post_top{
     display: flex;
     position: relative;
+    justify-content: space-between;
+    align-items: center; 
+}
+
+.post_top > .post_top_left{
+    display: flex;
+    position: relative;
+    align-items: center;
+    padding: 15px;
+}
+
+.post_top > .post_top_right{
+    display: flex;
     align-items: center;
     padding: 15px;
 }
@@ -41,6 +54,17 @@
 
 .post_image > img{
     width: 100%;
+}
+
+.post_image > video{
+    width: 100%;
+}
+
+.post_image > audio{
+    width: 90%;
+    margin: 10px 5px;
+    margin-right: 10px;
+    text-align: center;
 }
 
 .post_options{

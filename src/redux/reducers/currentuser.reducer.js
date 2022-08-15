@@ -9,6 +9,7 @@ import {
   FOLLOW_DEFUNT2,
   UNFOLLOW_DEFUNT2,
   UPDATE_DEFUNT,
+  DELETE_POST,
 } from "../actions/currentuser.action";
 
 const initialState = {};
@@ -117,8 +118,34 @@ export default function currentuserReducer(state = initialState, action) {
     case UPDATE_DEFUNT: {
       return {
         ...state,
-        defunt: defuntState(state.defunt, action.payload)
+        defunt: defuntState(state.defunt, action.payload),
       };
+    }
+    case DELETE_POST: {
+      const post = action.payload;
+      switch (post.type_post) {
+        case 1:
+          return {
+            ...state,
+            hommages: state.hommages.filter(
+              (hommage) => hommage.post_id !== post.post_id
+            ),
+          };
+        case 2:
+          return {
+            ...state,
+            condoleances: state.condoleances.filter(
+              (condoleance) => condoleance.post_id !== post.post_id
+            ),
+          };
+        default:
+          return {
+            ...state,
+            oraisons: state.oraisons.filter(
+              (oraison) => oraison.post_id !== post.post_id
+            ),
+          };
+      }
     }
     // case INIT_STATE:
     //   return initialState;
@@ -127,21 +154,21 @@ export default function currentuserReducer(state = initialState, action) {
   }
 }
 
-const defuntState= (object, objetEnter)=>{
-  let objectRes= object;
-  if(objetEnter.name) objectRes.name= objetEnter.name;
-  if(objetEnter.post_name) objectRes.post_name= objetEnter.post_name;
-  if(objetEnter.last_name) objectRes.last_name= objetEnter.last_name;
-  if(objetEnter.sexe) objectRes.sexe= objetEnter.sexe;
-  if(objetEnter.birth_date) objectRes.birth_date= objetEnter.birth_date;
-  if(objetEnter.birth_place) objectRes.birth_place= objetEnter.birth_place;
-  if(objetEnter.death_date) objectRes.death_date= objetEnter.death_date;
-  if(objetEnter.death_place) objectRes.death_date= objetEnter.death_place;
-  if(objetEnter.death_cause) objectRes.death_cause= objetEnter.death_cause;
-  if(objetEnter.burial_place) objectRes.burial_place= objetEnter.burial_place;
-  if(objetEnter.updated_at) objectRes.updated_at= objetEnter.updated_at;
+const defuntState = (object, objetEnter) => {
+  let objectRes = object;
+  if (objetEnter.name) objectRes.name = objetEnter.name;
+  if (objetEnter.post_name) objectRes.post_name = objetEnter.post_name;
+  if (objetEnter.last_name) objectRes.last_name = objetEnter.last_name;
+  if (objetEnter.sexe) objectRes.sexe = objetEnter.sexe;
+  if (objetEnter.birth_date) objectRes.birth_date = objetEnter.birth_date;
+  if (objetEnter.birth_place) objectRes.birth_place = objetEnter.birth_place;
+  if (objetEnter.death_date) objectRes.death_date = objetEnter.death_date;
+  if (objetEnter.death_place) objectRes.death_date = objetEnter.death_place;
+  if (objetEnter.death_cause) objectRes.death_cause = objetEnter.death_cause;
+  if (objetEnter.burial_place) objectRes.burial_place = objetEnter.burial_place;
+  if (objetEnter.updated_at) objectRes.updated_at = objetEnter.updated_at;
   return objectRes;
-}
+};
 
 // const posts = (list, eltEnter) => {
 //   let listPost = [];

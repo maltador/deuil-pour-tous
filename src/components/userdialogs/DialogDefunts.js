@@ -45,10 +45,10 @@ function DialogDefunts({ id, onClose, open, title, defunts, ...other }) {
         )}
       </DialogContent>
       <DialogActions>
-        <Button autoFocus onClick={handleCancel}>
+        <Button color="error" autoFocus onClick={handleCancel}>
           Cancel
         </Button>
-        <Button onClick={handleOk}>Ok</Button>
+        <Button color="error" onClick={handleOk}>Ok</Button>
       </DialogActions>
     </Dialog>
   );

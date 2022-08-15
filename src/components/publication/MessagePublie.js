@@ -3,12 +3,16 @@ import "./styles/MessagePublie.css";
 import { Avatar } from "@mui/material";
 import KeyboardVoiceIcon from "@mui/icons-material/KeyboardVoice";
 import PhotoLibraryIcon from "@mui/icons-material/PhotoLibrary";
-import InsertEmoticonIcon from "@mui/icons-material/InsertEmoticon";
+//import InsertEmoticonIcon from "@mui/icons-material/InsertEmoticon";
+import YouTubeIcon from "@mui/icons-material/YouTube";
 import CircularProgress from "@mui/material/CircularProgress";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Skeleton from "@mui/material/Skeleton";
 import { addPost } from "../../redux/actions/currentuser.action";
+//import DialogVoiceRec from "../userdialogs/DialogVoiceRec";
+import DialogYoutube from "../userdialogs/DialogYoutube";
+import DialogAudioRec from "../userdialogs/DialogAudioRec";
 
 function MessagePublie({ type }) {
   const hiddenFileInput = useRef(null);
@@ -18,8 +22,11 @@ function MessagePublie({ type }) {
   const [inputMsg, setInputMsg] = useState("");
   const [fileUrl, setFileUrl] = useState("");
   const [file, setFile] = useState(null);
-  const [isLoading, setIsLoading]= useState(false);
-  const dispatch = useDispatch();  
+  const [link, setLink] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+  const [openDialog, setOpenDialog] = useState(false);
+  const [openYoutubeDialog, setOpenYoutubeDialog] = useState(false);
+  const dispatch = useDispatch();
 
   const getTypePost = (typeString) => {
     switch (typeString) {
@@ -36,7 +43,7 @@ function MessagePublie({ type }) {
 
   const handlePost = (e) => {
     e.preventDefault();
-    if (inputMsg === "" && file === null) {
+    if (inputMsg === "" && file === null && link) {
       console.log("Vous devez entrer quelque chose!");
     } else {
       setIsLoading(true);
@@ -44,6 +51,7 @@ function MessagePublie({ type }) {
       data.append("file", file);
       data.append("text", inputMsg);
       data.append("type", getTypePost(type));
+      data.append("link", link);
       dispatch(addPost(defuntData.defunt.id, data)).then(() => {
         setFile(null);
         setInputMsg("");
@@ -57,7 +65,7 @@ function MessagePublie({ type }) {
 
   const handleChangeImg = (event) => {
     const fileIn = event.target.files[0];
-    if (fileIn && fileIn.type.substr(0, 5) === "image") {
+    if (fileIn && (fileIn.type.startsWith("image") || fileIn.type.startsWith("video"))) {
       setFile(fileIn);
     } else {
       setFile(null);
@@ -66,6 +74,31 @@ function MessagePublie({ type }) {
 
   const handleImageChange = (e) => {
     hiddenFileInput.current.click();
+  };
+
+  const handleVoice = () => {
+    setOpenDialog(true);
+  };
+
+  const handleYoutube = () => {
+    setOpenYoutubeDialog(true);
+  };
+
+  const handleDialogClose = () => {
+    setOpenDialog(false);
+  };
+
+  const handleYoutubeDialogClose = () => {
+    setOpenYoutubeDialog(false);
+  };
+
+  const setAudioFile = (file) => {
+    console.log(file);
+    setFile(file);
+  };
+
+  const setYoutube = (linkYt) => {
+    setLink(linkYt);
   };
 
   return (
@@ -93,16 +126,23 @@ function MessagePublie({ type }) {
               height={40}
             />
           )}
-          {file !== null && <div>{file.name}</div>}
+          {file !== null && (
+            <div>{file.name ? file.name : "1 fichier audio"}</div>
+          )}
+          {link !== '' && (<div>{link}</div>)}
           <input
             type="file"
             ref={hiddenFileInput}
             onChange={handleChangeImg}
-            accept=".jpg, .jpeg, .png"
+            accept="image/*, video/*"
           />
           {defuntData.user && (
             <button onClick={handlePost} type="submit">
-              {isLoading ? <CircularProgress size={20} color="inherit" /> : 'Publier'}              
+              {isLoading ? (
+                <CircularProgress size={20} color="inherit" />
+              ) : (
+                "Publier"
+              )}
             </button>
           )}
           {!defuntData.user && (
@@ -114,17 +154,17 @@ function MessagePublie({ type }) {
         <div className="messageSender-bottom">
           {defuntData.user && (
             <>
-              <div className="messageSender-option">
-                <KeyboardVoiceIcon style={{ color: "red" }} />
+              <div className="messageSender-option" onClick={handleVoice}>
+                <KeyboardVoiceIcon style={{ color: "orange" }} />
                 <h3>Voice</h3>
               </div>
               <div className="messageSender-option" onClick={handleImageChange}>
                 <PhotoLibraryIcon style={{ color: "green" }} />
                 <h3>Photo/Video</h3>
               </div>
-              <div className="messageSender-option">
-                <InsertEmoticonIcon style={{ color: "orange" }} />
-                <h3>Humeur/Activité</h3>
+              <div className="messageSender-option" onClick={handleYoutube}>
+                <YouTubeIcon style={{ color: "red" }} />
+                <h3>YouTube</h3>
               </div>
             </>
           )}
@@ -152,6 +192,16 @@ function MessagePublie({ type }) {
           )}
         </div>
       )}
+      <DialogAudioRec
+        onClose={handleDialogClose}
+        open={openDialog}
+        setAudioFile={setAudioFile}
+      />
+      <DialogYoutube
+        onClose={handleYoutubeDialogClose}
+        open={openYoutubeDialog}
+        setYoutubeLink={setYoutube}
+      />
     </div>
   );
 }
